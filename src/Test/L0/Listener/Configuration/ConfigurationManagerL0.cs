@@ -190,10 +190,10 @@ namespace GitHub.Runner.Common.Tests.Listener.Configuration
                 trace.Info("Configured, verifying all the parameter value");
                 var s = configManager.LoadSettings();
                 Assert.NotNull(s);
-                Assert.True(s.ServerUrl.Equals(_expectedServerUrl));
-                Assert.True(s.AgentName.Equals(_expectedAgentName));
+                Assert.Equal(s.ServerUrl, _expectedServerUrl);
+                Assert.Equal(s.AgentName, _expectedAgentName);
                 Assert.True(s.PoolId.Equals(_secondRunnerGroupId));
-                Assert.True(s.WorkFolder.Equals(_expectedWorkFolder));
+                Assert.Equal(s.WorkFolder, _expectedWorkFolder);
                 Assert.True(s.Ephemeral.Equals(true));
 
                 // validate GetAgentPoolsAsync gets called twice with automation pool type
@@ -292,10 +292,10 @@ namespace GitHub.Runner.Common.Tests.Listener.Configuration
                 trace.Info("Configured, verifying all the parameter value");
                 var s = configManager.LoadSettings();
                 Assert.NotNull(s);
-                Assert.True(s.ServerUrl.Equals(_expectedServerUrl));
-                Assert.True(s.AgentName.Equals(_expectedAgentName));
+                Assert.Equal(s.ServerUrl, _expectedServerUrl);
+                Assert.Equal(s.AgentName, _expectedAgentName);
                 Assert.True(s.PoolId.Equals(_secondRunnerGroupId));
-                Assert.True(s.WorkFolder.Equals(_expectedWorkFolder));
+                Assert.Equal(s.WorkFolder, _expectedWorkFolder);
                 Assert.True(s.Ephemeral.Equals(true));
 
                 // validate GetAgentPoolsAsync gets called twice with automation pool type
